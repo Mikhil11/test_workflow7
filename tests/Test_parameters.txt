@@ -1,1 +1,6 @@
-
+Sub_var:
+Input parameter:
+Expected Output:
+add_var:
+Input parameter:
+Expected Output:
