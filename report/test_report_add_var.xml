@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <testsuites>
-  <testsuite errors="0" failures="0" name="SolverTest" skipped="0" tests="1" time="0.01038">
-    <testcase classname="SolverTest" name="realSolution(fname=add_var#ext,ainput=_2_3_#ext,exp_output=5#ext)" time="0.01038"/>
+  <testsuite errors="0" failures="0" name="SolverTest" skipped="0" tests="1" time="0.012562">
+    <testcase classname="SolverTest" name="realSolution(fname=add_var#ext,ainput=_2_3_#ext,exp_output=5#ext)" time="0.012562"/>
   </testsuite>
 </testsuites>
