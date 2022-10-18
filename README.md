@@ -3,9 +3,7 @@
 This is a test template
 
 ## Features
-<!-- START dependent.md -->
-
-<!-- END dependent.md -->
+<!-- include dependent.md -->
 
 ## Installation
 * Clone `test_workflow7` to the local folder using the below command:
