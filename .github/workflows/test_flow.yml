@@ -1,0 +1,16 @@
+name: Update GitHub Profile README
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Update GitHub Profile README
+      uses: theboi/github-update-readme@main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        header: Features
+        footer: "Lets check this out"
