@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <testsuites>
-  <testsuite errors="0" failures="0" name="SolverTest" skipped="0" tests="1" time="0.32273">
-    <testcase classname="SolverTest" name="realSolution(fname=Sub_var#ext,ainput=_2_3_#ext,exp_output=-1#ext)" time="0.32273"/>
+  <testsuite errors="1" failures="0" name="SolverTest" skipped="0" tests="1" time="0.049187">
+    <testcase classname="SolverTest" name="realSolution(fname=Sub_var#ext,ainput=1x1_string#ext,exp_output=1x1_string#ext)" time="0.049187">
+      <error>Error occurred in SolverTest/realSolution(fname=Sub_var#ext,ainput=1x1_string#ext,exp_output=1x1_string#ext) and it did not run to completion.
+    ---------
+    Error ID:
+    ---------
+    'MATLAB:m_incomplete_statement'
+    --------------
+    Error Details:
+    --------------
+    Error using SolverTest/realSolution
+    Error: This statement is incomplete.</error>
+    </testcase>
   </testsuite>
 </testsuites>
