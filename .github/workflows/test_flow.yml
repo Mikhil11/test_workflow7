@@ -1,16 +1,56 @@
-name: Update GitHub Profile README
+# This is a basic workflow to help you get started with Actions
+
+name: Create dynamic README
+
+# Controls when the workflow will run
 on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches:
       - main
+      - 'code/*.m'
+    paths-ignore:
+      - 'README.MD'
+      - 'tests/*'
+      - '.github/workflows/**'
+      - 'LICENSE.txt'
+      - 'CONTRIBUTING.MD'
+      - 'AUTHORS.MD'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build:
+  # This workflow contains a single job called "test"
+  test:
+    name: Test test_workflow7
+    # The type of runner that the job will run on
     runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - name: Update GitHub Profile README
-      uses: theboi/github-update-readme@main
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        header: Features
-        footer: "Lets check this out"
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Check out repo
+        uses: actions/checkout@v3
+      
+      - name: Set up MATLAB
+        uses: matlab-actions/setup-matlab@v1
+
+      # Check for MATLAB code issues in the project.
+      - name: Check for MATLAB code issues
+        uses: matlab-actions/run-command@v1
+        continue-on-error: true
+        if: always()
+        with:
+          command: addpath("buildutil"),Update_Readme()
+      
+      # Commit the JSON for the badge for the issues
+      - name: commit code issues badge JSON
+        if: always()
+        continue-on-error: true
+        run: |
+          git config --global user.email "mikhils@mathworks.com" && git config --global user.name "Mikhil11"
+          git add README.md
+          git commit -m "Update dependency"
+          git push
