@@ -3,7 +3,7 @@ function Update_Readme(rootDir)
         rootDir (1,1) string  = pwd();
     end
     testFileInfo = fullfile(rootDir,"README.md");
-    testFolderInfo = dir(fullfile(rootDir,"cdt","*.m"));
+    testFolderInfo = dir(fullfile(rootDir,"code"));
     tline = readlines(testFileInfo);
     k = strfind(tline,"## Prerequisites");
     k1 = strfind(tline,"## Installation");
